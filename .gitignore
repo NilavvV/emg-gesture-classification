@@ -1,0 +1,4 @@
+data/*.txt
+EMG_data_for_gestures-master/
+.ipynb_checkpoints/
+__pycache__/.DS_Store
