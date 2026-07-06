@@ -30,17 +30,16 @@ or open `EMG_gesture.ipynb` for the exploratory/step-by-step version.
 4. Split by subject (57 train / 15 test) rather than randomly, to avoid leaking a subject's signal patterns across train/test , I didn't use the regular train_test_split because this is a time-series data and doing it with a basic train_test_split would result in a data leakage
 5. Train Random Forest and KNN, compare against a majority-class dummy baseline.(i used both randomforestclassifier and KNN because i thought it would help me comapre both the model)
 
-## Results
+
 ## Results
 | Model | Accuracy |
 |---|---|
 | Dummy (most frequent) | 16.66% |
-| Random Forest (single train/test split) | 85.83% |
-| Random Forest (5-fold cross-validation, grouped by subject) | 87.59% ± 1.73% |
+| Random Forest | 85.83% |
 | KNN (k=7) | 84.43% |
 
-accuracy varies by 1-2% depending on which subjects land in train vs. test — 
-this is expected variance, not a bug. Cross-validation gives a more stable estimate 
+Note: accuracy varies by 1-2% depending on which subjects land in train vs. test 
+(tested with different random states) — this is expected variance from the split, not a bug, Cross-validation gives a more stable estimate 
 than a single split.
 In the notebook I plotted confusion matrix to see how each class is confused by the model.
 when the class-0 was put in most of the predicted class were predicted to be '0' , obv because class-0 had the highest frequency of any class, and it was an unmarked data so it was dropped
