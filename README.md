@@ -7,7 +7,7 @@ Classifies hand gestures from 8-channel EMG (electromyography) signals using eng
 
 - **Features extracted per 200-sample window per channel**: RMS, MAV (mean absolute value), and mean frequency (via FFT).
 - **Models**: Random Forest and KNN (with StandardScaler), benchmarked against a DummyClassifier baseline(strategy = 'most_frequent').
-- **Result**: ~89% accuracy with Random Forest (vs. 16.6% baseline).
+- **Result**: ~86% accuracy with Random Forest (vs. 16.6% baseline).
 
 ## Dataset
 [https://archive.ics.uci.edu/static/public/481/emg+data+for+gestures.zip]. Download all the data from the link  and place them in `data/`.
